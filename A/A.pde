@@ -8,9 +8,10 @@ void setup()
   // Setting up sketch
   size(800, 800);
   frameRate(40);
+  smooth(12);
   background(255);
   
-  // Creating the alphabet mask
+  // Creating the text mask
   pg = createGraphics(width, height);
   pg.beginDraw();
   pg.textSize(width/2);
@@ -53,7 +54,7 @@ void draw()
       float e_y = y * gridSpacingVer;
       // Get PGraphics color at this coordinate
       color c = pg.get(int(e_x), int(e_y));
-      // Check if the point is inside the letter or outside
+      // Check if the point is inside the text
       boolean textDrawn = (c == color(0));
       
       if(textDrawn == true)
